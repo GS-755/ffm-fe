@@ -1,16 +1,18 @@
 .link { text-decoration: none; }
 .cl-browncyan { color: #505054; }
-.ml-35rem { margin-left: 35rem; }
+.ml-30rem { margin-left: 30rem; }
 .brand-name { 
   color:white; 
   text-align: center; 
   margin-top: 10px; 
+  font-size: 1.5rem;
 }
 .brand-name-dark { 
   text-align: center; 
   margin-top: 10px; 
+  color: #000;
 }
 .cart-number {
-  color: red; 
+  color: #f00; 
   margin-left: 10px;
 }

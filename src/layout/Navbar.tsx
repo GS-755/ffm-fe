@@ -1,20 +1,4 @@
-// import "../style/thuyen/AcountStyle.css";
-// import "../style/thuyen/DetailsStyle.css";
-// import "../style/thuyen/Font.css";
-// import "../style/thuyen/FooterStyle.css";
-// import "../style/thuyen/inline.css";
-// import "../style/thuyen/LayoutCart.css";
-// import "../style/thuyen/LayoutStyle.css";
-// import "../style/thuyen/menu.css";
-// import "../style/thuyen/mystyle.css";
-// import "../style/thuyen/PagedList.css";
-// import "../style/thuyen/PageStyle.css";
-// import "../style/thuyen/ProductsStyle.css";
-// import "../style/thuyen/profile.css";
-// import "../style/thuyen/ProViewStyle.css";
-// import "../style/thuyen/Site.css";
-// import "../style/thuyen/StyleWeb.css";
-
+import "../style/thuyen/inline.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -24,12 +8,19 @@ const Navbar = () => {
                 <div className="wrapper">
                     <div className="TenWeb">
                         <a href="#" className="link">
-                            <h4 className="brand-name">BookStore PTLN</h4>
+                            <h4 className="text brand-name">BookStore PTLN</h4>
                         </a>
                     </div>
-                    <div className="text brand-name">
-                        <a href="#">Đăng nhập</a> | 
-                        <a href="#"> Đăng ký</a>
+                    <div className="brand-name">
+                        <div className="text-white mx-3">
+                            <a href="#" className="link">Đăng nhập</a> | 
+                            <a href="#" className="link"> Đăng ký</a>
+                        </div>
+                        <div className="mt-4 text brand-name-dark align-middle">
+                            <a href="#"><i className="fa-solid fa-cart-shopping"></i></a>
+                            <a href="#">&emsp;Giỏ hàng</a>
+                            <span className="badge cart-number">(999)</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,25 +36,20 @@ const Navbar = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="text brand-name-dark">
-                        <a href="#">Giỏ hàng</a>
-                        <a href="#" className="cl-browncyan"><i className="fa-solid fa-cart-shopping"></i></a>
-                        <span className="badge cart-number">(999)</span>
-                    </div>
                 </div>
             </div>
             <div id="horizontalmenu">
-                <ul className="ml-35rem">
-                    <li className="menu-item">
+                <ul style={{ textAlign: "center" }} className="ml-30rem">
+                    <li className="nav-link">
                         <Link to="/">TRANG CHỦ</Link>
                     </li>
-                    <li className="menu-item">
+                    <li className="nav-link">
                         <a href="#">DANH MỤC</a>
                     </li>
-                    <li className="menu-item">
+                    <li className="nav-link">
                         <Link to="/about">GIỚI THIỆU</Link>
                     </li>
-                    <li className="menu-item">
+                    <li className="nav-link">
                         <a href="#div-footer">LIÊN HỆ</a>
                     </li>
                 </ul>
