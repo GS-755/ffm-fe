@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <>
       <nav>
-        <a href="#">Sản phẩm</a>
-        <a href="#">Giới thiệu</a>
+        <Link to="/">Trang chủ fast</Link>
+        <Link to="/about">Giới thiệu fast</Link>
       </nav>
     </>
   );

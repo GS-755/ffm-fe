@@ -1,8 +1,12 @@
+import { MainLayout } from "../layout/Layout"
+
 function About() {
   return (
-    <div>
-      <h1>About</h1>
-    </div>
+    <MainLayout>
+      <div>
+        <h1>Giới thiệu</h1>
+      </div>
+    </MainLayout>
   )
 }
 

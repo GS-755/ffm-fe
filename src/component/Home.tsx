@@ -1,8 +1,12 @@
+import { MainLayout } from "../layout/Layout"
 function Home() {
   return (
-    <div>
-      <h1>Homepage</h1>
-    </div>
+    <MainLayout>
+      <div>
+        <h1>Hello, world!</h1>
+        <p>Do something big boiz :)</p>
+      </div>
+    </MainLayout>
   )
 }
 
