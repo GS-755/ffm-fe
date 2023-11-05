@@ -8,11 +8,11 @@ const Navbar = () => {
                 <div className="wrapper">
                     <div className="TenWeb">
                         <a href="#" className="link">
-                            <h4 className="text brand-name">BookStore PTLN</h4>
+                            <h4 className="text brand-name">FastFood FC</h4>
                         </a>
                     </div>
                     <div className="brand-name">
-                        <div className="text-white mx-3">
+                        <div className="text-white">
                             <a href="#" className="link">Đăng nhập</a> | 
                             <a href="#" className="link"> Đăng ký</a>
                         </div>
@@ -29,7 +29,7 @@ const Navbar = () => {
                     <div className="wrap">
                         <form>
                             <div className="search">
-                                <input id="searching" className="searchTerm" type="text" name="searching" placeholder="Tìm Kiếm truyện" />
+                                <input id="searching" className="searchTerm" type="text" name="searching" placeholder="Tìm kiếm món ăn..." />
                                 <button type="submit" className="searchButton">
                                     <i className="fa-solid fa-magnifying-glass"></i>
                                 </button>

@@ -1,28 +1,29 @@
-﻿body {
+﻿:root {
+    --color-1: #E07C4F;
+    --color-2: #D65D26;
+    --color-3: #E89C7B;
+}
+
+body {
     margin: 0 auto;
     font-family: 'Nunito Sans', sans-serif;
 }
-
 #div-top {
     height: 50px;
     display: flex;
     flex-direction: row;
-    background-color: #532d6d;
+    background-color: var(--color-3);
 }
-
 .wrapper {
-
     display: grid;
     grid-template-columns: 300px 300px;
     grid-template-rows: 70px;
     grid-column-gap: 900px;
 }
-
 body a {
     text-decoration: none;
     color: black;
 }
-
 .text a {
     text-decoration: none;
     font-family: 'Nunito Sans', sans-serif;
@@ -34,17 +35,14 @@ body a {
     font-size: 23px;
     color: #fff;
 }
-
 #nav {
     height: 80px;
     background-color: white;
 }
-
 .img-logo {
     height: 80px;
     margin-left: 30px;
 }
-
 .search {
     width: 100%;
     position: relative;
@@ -52,7 +50,6 @@ body a {
     float: right;
     margin-bottom: 7rem;
 }
-
 .searchTerm {
     width: 100%;
     border: 3px solid black;
@@ -61,13 +58,12 @@ body a {
     height: 36px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: var(--color-2);
 }
-
 .searchTerm:focus {
-    color: #00B4CC;
+    color: var(--color-2);
+    font-weight: 600;
 }
-
 .searchButton {
     width: 100px;
     height: 36px;
@@ -79,7 +75,6 @@ body a {
     cursor: pointer;
     font-size: 20px;
 }
-
 .wrap {
     width: 30%;
     position: absolute;
@@ -87,12 +82,10 @@ body a {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 #div-main {
     display: flex;
     flex-direction: row;
 }
-
 #div-content {
     display: block;
     flex-direction: row;
@@ -100,7 +93,6 @@ body a {
     width: 100%;
     background-color: white;
 }
-
 #div-footer {
     display: flex;
     justify-content: space-between;
@@ -110,55 +102,42 @@ body a {
     background-color: #efefef;
     height: 400px;
 }
-
 #div-footer a {
     color: #505054;
 }
-
 #div-footer div {
     margin-top: 20px;
 }
-
 #div-footer * {
     margin-top: 10px;
 }
-
-
 .footer-right1 {
     margin-right: 40px;
 }
-
 .footer-right1 p a {
     color: white;
 }
-
 .footer-right1 p a:hover {
     color: #01a14b;
 }
-
 .footer-left1 p a {
     color: white;
 }
-
 .footer-left1 p a:hover {
     color: #01a14b;
 }
-
 .grid {
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }
-
 .top {
     display: flex;
     justify-content: space-between;
 }
-
 #horizontalmenu {
     margin-bottom: 20px;
 }
-
 .btn-submit [type=submit] {
     border-radius: 30px 30px;
     top: 0;
