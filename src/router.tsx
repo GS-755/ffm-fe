@@ -1,5 +1,6 @@
 import Home from "./component/Home";
 import About from "./component/About";
+import Cart from "./component/Cart";
 
 interface Route {
   path: string;
@@ -14,7 +15,11 @@ const routes: Route[] = [
   {
     path: '/about',
     element: <About/>,
-  }
+  },
+  {
+    path: '/cart',
+    element: <Cart/>
+  },
 ];
 
 export default routes;

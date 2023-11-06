@@ -1,24 +1,25 @@
 import "../style/thuyen/inline.css";
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
     return (
         <>
             <div id="div-top">
                 <div className="wrapper">
                     <div className="TenWeb">
-                        <a href="#" className="link">
+                        <a href="#" className="link font-bold">
                             <h4 className="text brand-name">FastFood FC</h4>
                         </a>
                     </div>
                     <div className="brand-name">
-                        <div className="text-white">
+                        <div className="text-white font-bold">
                             <a href="#" className="link">Đăng nhập</a> | 
                             <a href="#" className="link"> Đăng ký</a>
                         </div>
-                        <div className="mt-4 text brand-name-dark align-middle">
+                        <div className="mt-4 text brand-name-dark align-middle font-bold">
                             <a href="#"><i className="fa-solid fa-cart-shopping"></i></a>
-                            <a href="#">&emsp;Giỏ hàng</a>
+                            <Link to="/cart">&emsp;Giỏ hàng</Link>
                             <span className="badge cart-number">(999)</span>
                         </div>
                     </div>
@@ -39,7 +40,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div id="horizontalmenu">
-                <ul style={{ textAlign: "center" }} className="ml-30rem">
+                <ul style={{ textAlign: "center" }} className="ml-35rem font-bold">
                     <li className="nav-link">
                         <Link to="/">TRANG CHỦ</Link>
                     </li>
@@ -58,4 +59,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export { Navbar };
