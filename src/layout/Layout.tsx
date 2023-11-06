@@ -7,7 +7,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
     <div>
       <Navbar></Navbar>
       <main className="h-full max-h-max max-w-full overflow-hidden">
-        {children}  
+        {children}
       </main>
 
       <Footer />

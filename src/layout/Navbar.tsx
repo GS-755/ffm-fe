@@ -13,7 +13,7 @@ const Navbar = () => {
                     </div>
                     <div className="brand-name">
                         <div className="text-white font-bold">
-                            <a href="#" className="link">Đăng nhập</a> | 
+                            <a href="#" className="link">Đăng nhập</a> |
                             <a href="#" className="link"> Đăng ký</a>
                         </div>
                         <div className="mt-4 text brand-name-dark align-middle font-bold">

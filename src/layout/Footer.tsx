@@ -17,10 +17,10 @@ const Footer = () => {
             <div className="col-md-3">
               <h1 className="text-xl">LIÊN HỆ</h1>
               <p>Địa chỉ: FFM</p>
-              <p>Email: 
+              <p>Email:
                 <a href="mailto:21dh114236@st.huflit.edu.vn">21dh114236@st.huflit.edu.vn</a>
               </p>
-              <p>Số điện thoại: 
+              <p>Số điện thoại:
                 <a href="tel:0832476086">083 247 6086</a>
               </p>
             </div>

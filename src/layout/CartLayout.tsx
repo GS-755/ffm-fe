@@ -35,11 +35,11 @@ const CartMain = () => {
               <div className="row text-end">
                 <div className="col-md-4 fs-3">
                   <p>
-                    Tổng tiền: 
+                    Tổng tiền:
                     <span className="fs-4 font-bold text-danger">
                       &ensp;{formatCurrency(totalCartPrice())}
                     </span>
-                  </p>  
+                  </p>
                 </div>
                 <div className="col-md-4 text-end">
                   <BtnCheckout />

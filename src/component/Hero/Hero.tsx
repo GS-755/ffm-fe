@@ -3,7 +3,6 @@ initTE({ Carousel });
 import HeroImg from "../../assets/image/hero/unsplash-hero.jpg";
 import HeroImg2 from "../../assets/image/hero/unsplash-hero-2.jpg";
 
-
 const Hero = () => {
   return (
     <>
