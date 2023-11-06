@@ -23,10 +23,6 @@ const Footer = () => {
               <p>Số điện thoại: 
                 <a href="tel:0832476086">083 247 6086</a>
               </p>
-              <h1 className="text-xl">KẾT NỐI</h1>
-              <p>
-                <a href="">Hồ Hải Thuyên</a>
-              </p>
             </div>
             <div className="col-md-3">
               <h1 className="text-xl">ĐĂNG KÝ NHẬN TIN</h1>
