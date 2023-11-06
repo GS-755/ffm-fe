@@ -1,5 +1,5 @@
 import FakeProduct from "../../utils/fake-products";
-import { ProductView } from "./ProductView";
+import { ProductView } from "../../layout/ProductLayout";
 
 const fakeHotProducts: FakeProduct[] = [
   {

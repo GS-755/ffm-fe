@@ -1,15 +1,15 @@
 import "../style/App.css";
 import { MainLayout } from "../layout/Layout";
-import { Hero } from "./Hero";
+import { Hero } from "./Hero/Hero";
 import { Product } from "./Product/Product";
 import { HotProduct } from "./Product/HotProduct";
 
 function Home() {
   return (
     <MainLayout>
-      <Hero></Hero>
+      <Hero />
       <hr className="mt-5 mb-3"></hr>
-      <h1 className="text-center font-bold text-4xl text-uppercase">Sản phẩm bán chạy</h1>
+      <h1 className="text-center font-bold text-3xl text-uppercase">Sản phẩm bán chạy</h1>
       <hr className="mt-3 mb-3"></hr>
       <section className="section">
         <div className="container-fluid">
@@ -19,7 +19,7 @@ function Home() {
         </div>
       </section>
       <hr className="mt-5 mb-3"></hr>
-      <h1 className="text-center font-bold text-4xl text-uppercase">Các sản phẩm khác</h1>
+      <h1 className="text-center font-bold text-3xl text-uppercase">Các sản phẩm khác</h1>
       <hr className="mt-3 mb-3"></hr>
       <section className="section">
         <div className="container-fluid">

@@ -8,18 +8,20 @@ const Navbar = () => {
                 <div className="wrapper">
                     <div className="TenWeb">
                         <a href="#" className="link">
-                            <h4 className="text brand-name">FastFood FC</h4>
+                            <h4 className="text brand-name font-bold">FastFood FC</h4>
                         </a>
                     </div>
                     <div className="brand-name">
-                        <div className="text-white">
+                        <div className="text-white font-bold">
                             <a href="#" className="link">Đăng nhập</a> | 
                             <a href="#" className="link"> Đăng ký</a>
                         </div>
-                        <div className="mt-4 text brand-name-dark align-middle">
-                            <a href="#"><i className="fa-solid fa-cart-shopping"></i></a>
-                            <a href="#">&emsp;Giỏ hàng</a>
-                            <span className="badge cart-number">(999)</span>
+                        <div className="mt-4 text brand-name-dark align-middle font-bold">
+                            <Link to="/cart" className="nav-link">
+                                <i className="fa-solid fa-cart-shopping"></i>
+                                &ensp;Giỏ hàng
+                                <span className="badge cart-number">(999)</span>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -39,7 +41,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div id="horizontalmenu">
-                <ul style={{ textAlign: "center" }} className="ml-30rem">
+                <ul className="font-bold ml-30rem">
                     <li className="nav-link">
                         <Link to="/">TRANG CHỦ</Link>
                     </li>

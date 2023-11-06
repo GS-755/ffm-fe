@@ -1,7 +1,7 @@
-import FakeProduct from "../../utils/fake-products";
-import { BtnBuy } from "../../ui/ButtonBuy";
-import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
-import { formatCurrency } from "../../utils/format-currency";
+import FakeProduct from "../utils/fake-products";
+import { BtnBuy } from "../ui/ButtonBuy";
+import ProductSample from "../assets/image/product/unsplash-product-sample.jpg";
+import { formatCurrency } from "../utils/format-currency";
 
 interface ProductViewProps {
   product: FakeProduct;
