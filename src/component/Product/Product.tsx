@@ -1,4 +1,4 @@
-import { ProductView } from "../../layout/ProductLayout";
+import { ProductView } from "../../layout/Product/ProductLayout";
 import fakeProducts from "../../utils/data/fake-products-data";
 
 const Product = () => {

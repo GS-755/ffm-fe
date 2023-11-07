@@ -1,4 +1,4 @@
-import FakeProduct from "./fake-products";
+import FakeProduct from "./fake-product";
 
 interface FakeCart {
   id: number;

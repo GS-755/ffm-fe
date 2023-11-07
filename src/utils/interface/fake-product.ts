@@ -3,6 +3,7 @@ interface FakeProduct {
     proTitle: string;
     proDescription: string;
     proPrice: number;
+    proQty: number;
   }
   
   export default FakeProduct;

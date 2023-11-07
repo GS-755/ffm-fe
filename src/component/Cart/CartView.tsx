@@ -1,4 +1,4 @@
-import FakeCart from "../../utils/fake-cart";
+import FakeCart from "../../utils/interface/fake-cart";
 import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
 import { formatCurrency } from "../../utils/format-currency";
 

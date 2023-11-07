@@ -1,9 +1,9 @@
-import { MainLayout } from "./Layout";
+import { MainLayout } from "../Layout";
 import "../style/thuyen/LayoutCart.css";
-import Cart from "../component/Cart/Cart";
-import { formatCurrency } from "../utils/format-currency";
-import { BtnCheckout } from "../ui/ButtonCheckout";
-import totalCartPrice from "../utils/total-money";
+import Cart from "../../component/Cart/Cart";
+import { formatCurrency } from "../../utils/format-currency";
+import { BtnCheckout } from "../../ui/ButtonCheckout";
+import totalCartPrice from "../../utils/total-money";
 
 const CartMain = () => {
   return (

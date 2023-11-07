@@ -1,7 +1,7 @@
 import Home from "./component/Home";
-import Detail from "./component/Detail";
+import Detail from "./component/Product/DetailsView";
 import About from "./component/About";
-import { CartMain } from "./layout/CartLayout";
+import { CartMain } from "./layout/Cart/CartLayout";
 
 interface Route {
   path: string;
@@ -15,7 +15,7 @@ const routes: Route[] = [
   },
   {
     path: '/detail',
-    element: <Detail/>,
+    element: <Detail />,
   },
   {
     path: '/about',
