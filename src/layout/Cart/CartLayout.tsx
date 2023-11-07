@@ -1,5 +1,5 @@
 import { MainLayout } from "../Layout";
-import "../style/thuyen/LayoutCart.css";
+import "../../style/thuyen/LayoutCart.css";
 import Cart from "../../component/Cart/Cart";
 import { formatCurrency } from "../../utils/format-currency";
 import { BtnCheckout } from "../../ui/ButtonCheckout";

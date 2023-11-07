@@ -1,6 +1,6 @@
-import FakeProduct from "../utils/fake-products";
+import FakeProduct from "../../utils/interface/fake-product";
 import { BtnBuy } from "../../ui/ButtonBuy";
-import ProductSample from "../assets/image/product/unsplash-product-sample.jpg";
+import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
 import { formatCurrency } from "../../utils/format-currency";
 
 interface ProductViewProps {

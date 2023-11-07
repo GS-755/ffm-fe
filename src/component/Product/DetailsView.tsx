@@ -5,7 +5,7 @@ import { formatCurrency } from "../../utils/format-currency";
 import { QuantityPicker } from "react-qty-picker";
 import { useNavigate } from "react-router-dom";
 import qtyDetails from "../../utils/data/qty-details-data";
-import "../style/App.css";
+import "../../style/App.css";
 import FakeProduct from "../../utils/interface/fake-product";
 
 function DetailsView(fakeProduct: FakeProduct) {
