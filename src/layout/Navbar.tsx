@@ -7,9 +7,9 @@ const Navbar = () => {
             <div id="div-top">
                 <div className="wrapper">
                     <div className="TenWeb">
-                        <a href="#" className="link">
+                        <Link to="/" className="link">
                             <h4 className="text brand-name font-bold">FastFood FC</h4>
-                        </a>
+                        </Link>
                     </div>
                     <div className="brand-name">
                         <div className="text-white font-bold">
