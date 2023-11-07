@@ -1,3 +1,4 @@
+import "../../style/Hero.css";
 import { Carousel, initTE } from "tw-elements";
 initTE({ Carousel });
 import HeroImg from "../../assets/image/hero/unsplash-hero.jpg";
