@@ -1,4 +1,3 @@
-import "../style/App.css";
 import { MainLayout } from "../layout/Layout";
 import { Hero } from "./Hero/Hero";
 import { Product } from "./Product/Product";
