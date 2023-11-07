@@ -4,10 +4,10 @@ import { formatCurrency } from "../../utils/format-currency";
 import fakeProducts from "../../utils/data/fake-products-data";
 import { MainLayout } from "../Layout";
 
-interface ProductViewProps {
+interface GetId {
   id: number;
 }
-const DetailsView = ({ id }: ProductViewProps) => {
+const Detail = ({ id }: GetId) => {
   return (
     <>
       <MainLayout>
@@ -44,4 +44,4 @@ const DetailsView = ({ id }: ProductViewProps) => {
   );
 }
 
-export { DetailsView };
+export { Detail };

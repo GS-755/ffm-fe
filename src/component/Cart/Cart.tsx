@@ -1,5 +1,5 @@
 import fakeCart from "../../utils/data/fake-cart-data";
-import { CartView } from "./CartView";
+import { CartView } from "../../layout/Product/CartLayout";
 
 const Cart = () => {
   return (

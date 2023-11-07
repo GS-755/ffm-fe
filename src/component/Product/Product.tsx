@@ -4,11 +4,11 @@ import fakeProducts from "../../utils/data/fake-products-data";
 const Product = () => {
   return (
     <>
-      { fakeProducts.map(product => (
-        <ProductView 
-          key={ product.proId }
-          product={ product }
-        />  
+      {fakeProducts.map(product => (
+        <ProductView
+          key={product.proId}
+          product={product}
+        />
       ))}
     </>
   )
