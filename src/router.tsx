@@ -3,6 +3,7 @@ import About from "./component/About";
 import Login from "./component/Customer/Login";
 import Register from "./component/Customer/Register";
 import { CartMain } from "./layout/Cart/CartLayout";
+import { Modal } from "./component/Test/Modal";
 
 interface Route {
   path: string;
@@ -29,6 +30,10 @@ const routes: Route[] = [
   {
     path: '/customer/register',
     element: <Register />
+  },
+  {
+    path: '/test',
+    element: <Modal/>
   }
 ];
 
