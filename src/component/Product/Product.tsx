@@ -1,16 +1,24 @@
-// import { ProductView } from "../../layout/Product/ProductLayout";
+import { ProductView } from "../../layout/Product/ProductLayout";
+import useFetch from "../../utils/data/json-fetch";
 
-// const Product = () => {
-//   return (
-//     <>
-//       {foods.map(food => (
-//         <ProductView
-//           key={food.idFc}
-//           food={food}
-//         />
-//       ))}
-//     </>
-//   )
-// }
+const Product = (): JSX.Element => {
+  const { data: foods, isPending, error } = useFetch('http://localhost:3001/api/food');
+  return (
+    <section>
+      {
+        error
+        && <p>{error}</p>
+      }
+      {
+        isPending
+        && <p className="text-center">Đang tải sản phẩm...</p>
+      }
+      {
+        foods &&
+        <ProductView foods={foods} />
+      }
+    </section>
+  );
+};
 
-// export { Product };
+export default Product;

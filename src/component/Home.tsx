@@ -1,5 +1,6 @@
 import { MainLayout } from "../layout/Layout";
 import { Hero } from "./Hero/Hero";
+import Product from "./Product/Product";
 
 function Home() {
   return (
@@ -21,7 +22,7 @@ function Home() {
       <section className="section">
         <div className="container-fluid">
           <div className="grid grid-cols-4 gap-3 fs-5">
-            
+            <Product />
           </div>
         </div>
       </section>
@@ -30,4 +31,4 @@ function Home() {
   );
 }
 
-export default Home
+export default Home;
