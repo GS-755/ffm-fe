@@ -13,8 +13,8 @@ const Navbar = () => {
                     </div>
                     <div className="brand-name">
                         <div className="text-white">
-                            <a href="#" className="link">Đăng nhập</a> | 
-                            <a href="#" className="link"> Đăng ký</a>
+                            <Link to="/customer/login" className="link">Đăng nhập</Link> | 
+                            <Link to="/customer/register"  className="link"> Đăng ký</Link>
                         </div>
                         <div className="mt-4 text brand-name-dark align-middle">
                             <a href="#"><i className="fa-solid fa-cart-shopping"></i></a>

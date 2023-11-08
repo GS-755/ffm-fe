@@ -2,6 +2,8 @@ import Home from "./component/Home";
 import Detail from "./component/Detail";
 import About from "./component/About";
 import Cart from "./component/Cart";
+import Login from "./component/Customer/Login";
+import Register from "./component/Customer/Register";
 
 interface Route {
   path: string;
@@ -24,6 +26,14 @@ const routes: Route[] = [
   {
     path: '/cart',
     element: <Cart />
+  },
+  {
+    path: '/customer/login',
+    element: <Login />
+  },
+  {
+    path: '/customer/register',
+    element: <Register />
   }
 ];
 
