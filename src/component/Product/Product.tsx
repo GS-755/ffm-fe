@@ -1,17 +1,16 @@
-import { ProductView } from "../../layout/Product/ProductLayout";
-import fakeProducts from "../../utils/data/fake-products-data";
+// import { ProductView } from "../../layout/Product/ProductLayout";
 
-const Product = () => {
-  return (
-    <>
-      {fakeProducts.map(product => (
-        <ProductView
-          key={product.proId}
-          product={product}
-        />
-      ))}
-    </>
-  )
-}
+// const Product = () => {
+//   return (
+//     <>
+//       {foods.map(food => (
+//         <ProductView
+//           key={food.idFc}
+//           food={food}
+//         />
+//       ))}
+//     </>
+//   )
+// }
 
-export { Product };
+// export { Product };
