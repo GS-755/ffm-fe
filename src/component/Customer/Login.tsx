@@ -1,6 +1,6 @@
 import { MainLayout } from "../../layout/Layout";
 import { useState } from "react";
-import "../../style/tuan/Login.css";
+import "../../style/tuan/form.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,7 +22,7 @@ function Login() {
                 <input
                   type="email"
                   id="email"
-                  style={{ width: "100%", padding: "0.5rem", border: "1px solid #ccc", borderRadius: "15px" }}
+                  className="form-input"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -32,7 +32,7 @@ function Login() {
                 <input
                   type="password"
                   id="password"
-                  style={{ width: "100%", padding: "0.5rem", border: "1px solid #ccc", borderRadius: "15px" }}
+                  className="form-input"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />

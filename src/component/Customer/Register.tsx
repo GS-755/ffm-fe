@@ -1,22 +1,21 @@
 import { MainLayout } from "../../layout/Layout";
 import { useState } from "react";
+import "../../style/tuan/form.css";
 
 function Register() {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
-  const handleRegister = (e) => {
+  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Xử lý đăng ký ở đây
   };
   return (
     <MainLayout>
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f0f0f0" }}>
-        <div style={{ background: "#D9D9D9", padding: "1rem", borderRadius: "8px", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", width: "500px" }}>
+      <div className="main-frame">
+        <div className="login-frame">
           <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-            <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Đăng ký tài khoản</h2>
+            <h2 className="login-header mt-3">Đăng ký tài khoản</h2>
           </div>
           <form onSubmit={handleRegister}>
             <div style={{ marginBottom: "1rem" }}>
@@ -62,7 +61,7 @@ function Register() {
         </div>
       </div>
     </MainLayout>
-  )
+  );
 }
 
 export default Register;
