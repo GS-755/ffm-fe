@@ -12,9 +12,9 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="brand-name">
-                        <div className="text-white font-bold">
-                            <a href="#" className="link">Đăng nhập</a> |
-                            <a href="#" className="link"> Đăng ký</a>
+                        <div className="text-white">
+                            <Link to="/customer/login" className="link">Đăng nhập</Link> | 
+                            <Link to="/customer/register"  className="link"> Đăng ký</Link>
                         </div>
                         <div className="mt-4 text brand-name-dark align-middle font-bold">
                             <Link to="/cart" className="nav-link">

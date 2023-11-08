@@ -1,7 +1,8 @@
 import Home from "./component/Home";
 import About from "./component/About";
-import Details from "./component/Product/Details/Details";
-import { CartMain } from "./layout/Cart/CartLayout";
+import Cart from "./component/Cart";
+import Login from "./component/Customer/Login";
+import Register from "./component/Customer/Register";
 
 interface Route {
   path: string;
@@ -19,11 +20,15 @@ const routes: Route[] = [
   }, 
   {
     path: '/cart',
-    element: <CartMain />
+    element: <Cart />
   },
   {
-    path: '/details/:id',
-    element: <Details />
+    path: '/customer/login',
+    element: <Login />
+  },
+  {
+    path: '/customer/register',
+    element: <Register />
   }
 ];
 
