@@ -3,6 +3,7 @@ import About from "./component/About";
 import Login from "./component/Customer/Login";
 import Register from "./component/Customer/Register";
 import { CartMain } from "./layout/Cart/CartLayout";
+import Details from "./component/Product/Details/Details";
 
 interface Route {
   path: string;
@@ -28,6 +29,10 @@ const routes: Route[] = [
   {
     path: '/customer/register',
     element: <Register />
+  },
+  {
+    path: 'details/:id',
+    element: <Details />
   }
 ];
 
