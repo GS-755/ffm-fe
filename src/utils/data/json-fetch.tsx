@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react';
+import Food from '../interface/Food';
 
 interface UseFetchResult {
-  data: any | null;
+  data: Food[] | null;
   isPending: boolean;
   error: string | null;
 }
 const useFetch = (url: string): UseFetchResult => {
-  const [data, setData] = useState<any | null>(null);
+  const [data, setData] = useState<Food[] | null>(null);
   const [isPending, setIsPending] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     setTimeout(() => {
-      fetch(url, {mode: 'no-cors'})
+      fetch(url)
         .then(res => {
-          if (!res.ok) {
+          if (!res.ok) {  
             throw Error('An error occured :(((');
           }
           
