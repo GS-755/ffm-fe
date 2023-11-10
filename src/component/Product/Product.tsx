@@ -2,7 +2,7 @@ import { ProductView } from "../../layout/Product/ProductLayout";
 import useFetch from "../../utils/data/json-fetch";
 
 const Product = (): JSX.Element => {
-  const { data: foods, isPending, error } = useFetch('http://localhost:3001/api/food');
+  const { data: foods, isPending, error } = useFetch(import.meta.env.VITE_API_PATH + '/food');
   return (
     <section>
       {
