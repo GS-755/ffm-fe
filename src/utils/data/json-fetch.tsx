@@ -12,7 +12,7 @@ const useFetch = (url: string): UseFetchResult => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch(url, {mode: 'no-cors'})
+      fetch(url)
         .then(res => {
           if (!res.ok) {
             throw Error('An error occured :(((');

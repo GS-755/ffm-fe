@@ -15,7 +15,7 @@ const ProductView: React.FC<ProductListProps> = ({ foods }) => {
     <>
       {
         foods.map((food) => (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg pb-4" onClick={() => handleClick(food)}>
+          <div className="rounded overflow-hidden shadow-lg pb-4" onClick={() => handleClick(food)}>
             <img className="w-full" src={ProductSample} alt="Sample product" />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
