@@ -4,6 +4,8 @@ import Login from "./component/Customer/Login";
 import Register from "./component/Customer/Register";
 import { CartMain } from "./layout/Cart/CartLayout";
 import Details from "./component/Product/Details/Details";
+import AdminFood from "./component/Admin/Admin_Product/AdminFood";
+import AdminFC from "./component/Admin/Admin_Product/AdminFC";
 
 interface Route {
   path: string;
@@ -11,29 +13,38 @@ interface Route {
 }
 const routes: Route[] = [
   {
-    path: '/',
+    path: "/",
     element: <Home />,
   },
   {
-    path: '/about',
+    path: "/about",
     element: <About />,
-  }, 
-  {
-    path: '/cart',
-    element: <CartMain />
   },
   {
-    path: '/customer/login',
-    element: <Login />
+    path: "/cart",
+    element: <CartMain />,
   },
   {
-    path: '/customer/register',
-    element: <Register />
+    path: "/customer/login",
+    element: <Login />,
   },
   {
-    path: 'details/:id',
-    element: <Details />
-  }
+    path: "/customer/register",
+    element: <Register />,
+  },
+  {
+    path: "details/:id",
+    element: <Details />,
+  },
+  {
+    path: "/admin",
+    element: <AdminFood />,
+  },
+  {
+    path: "/admin-fc",
+    element: <AdminFC />,
+  },
+
 ];
 
 export default routes;
