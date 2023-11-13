@@ -3,16 +3,18 @@ import { BtnAddToCart } from "../../ui/ButtonToCart";
 import { MainLayout } from "../Layout";
 import Food from "../../utils/interface/Food";
 import { formatCurrency } from "../../utils/format-currency";
+import React from "react";
+import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
 
 interface ProductViewProps {
   food: Food;
 }
-const DetailsView = ( {food}: ProductViewProps ) => {
+const DetailsView: React.FC<ProductViewProps> = ({ food }) => {
   return (
     <>
       <MainLayout>
         <div className="grid grid-cols-2 gap-5">
-          <img className="mt-4 rounded-lg" src="https://images.foody.vn/res/g104/1034432/prof/s640x400/foody-upload-api-foody-mobile-40-200706093715.jpg" alt="Food details"></img>
+          <img className="mt-4 rounded-lg" src={ProductSample} alt="Food details"></img>
           <div className="mt-4">
             <div className=" mx-3 font-semibold">
               <h2 className="my-2 font-semibold text-3xl pl-5 py-1 rounded-lg">{food.name}</h2>

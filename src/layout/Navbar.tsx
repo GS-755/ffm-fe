@@ -1,5 +1,7 @@
 import "../style/thuyen/inline.css";
 import { Link } from "react-router-dom";
+import { totalCartQty } from "../utils/total-cartqty";
+import fakeCart from "../utils/data/fake-cart-data";
 
 const Navbar = () => {
     return (
@@ -20,7 +22,7 @@ const Navbar = () => {
                             <Link to="/cart" className="nav-link">
                                 <i className="fa-solid fa-cart-shopping"></i>
                                 &ensp;Giỏ hàng
-                                <span className="badge cart-number">(999)</span>
+                                <span className="badge cart-number">({totalCartQty(fakeCart)})</span>
                             </Link>
                         </div>
                     </div>
