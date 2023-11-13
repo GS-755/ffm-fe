@@ -28,7 +28,11 @@ const QtyPicker: React.FC<QtyProps> = ({ maxQty }) => {
             setQty(qty - 1);
           }
         }}> - </button>
-        <input type="text" className="form-control text-center mx-3" min={1} max={maxQty} value={qty} readOnly></input>
+        <input
+          type="text"
+          className="form-control text-center mx-3"
+          min={1} max={maxQty} value={qty} readOnly>
+        </input>
         <button className="btn btn-outline-success" onClick={() => {
           if (isValidMax()) {
             setQty(qty + 1)

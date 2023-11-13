@@ -35,7 +35,7 @@ const DetailsView: React.FC<ProductViewProps> = ({ food }) => {
             </div>
             <div className="mt-4 pb-4 grid grid-cols-2 gap-3">
               <BtnBuy></BtnBuy>
-              <BtnAddToCart></BtnAddToCart>
+              <BtnAddToCart food={food} qty={3}></BtnAddToCart>
             </div>
           </div>
         </div>

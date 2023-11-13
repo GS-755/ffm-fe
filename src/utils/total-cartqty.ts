@@ -1,7 +1,7 @@
-import FakeCart from "./interface/fake-cart";
+import cartItems from "./data/cart/CartItem";
 
-const totalCartQty = (fakeCart: FakeCart[]): number => {
-  return fakeCart.length;
+const totalCartQty = (): number => {
+  return cartItems.getItemCount();
 }
 
 export { totalCartQty };
