@@ -1,10 +1,10 @@
 import { BtnBuy } from "../../ui/ButtonBuy";
 import { BtnAddToCart } from "../../ui/ButtonToCart";
-import { MainLayout } from "../Layout";
-import Food from "../../utils/interface/Food";
 import { formatCurrency } from "../../utils/format-currency";
+import Food from "../../utils/interface/Food";
 import React from "react";
 import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
+import { MainLayout } from "../Layout";
 
 interface ProductViewProps {
   food: Food;

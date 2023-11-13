@@ -19,7 +19,7 @@ const Product = (): JSX.Element => {
           <>
             {
               foods.map((k: Food) => (
-                <ProductView food={k} />
+                <ProductView key={k.idFood} food={k} />
               ))
             }
           </>
