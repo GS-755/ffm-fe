@@ -1,5 +1,5 @@
 import { ProductView } from "../../layout/Product/ProductLayout";
-import useFetch from "../../utils/data/json-fetch";
+import useFetch from "../../utils/data/food/food-fetch";
 import Food from "../../utils/interface/Food";
 
 const Product = (): JSX.Element => {
@@ -8,7 +8,7 @@ const Product = (): JSX.Element => {
     <>
       {
         error
-        && <p>{error}</p>
+        && <p className="text-center">{error}</p>
       }
       {
         isPending

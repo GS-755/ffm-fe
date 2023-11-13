@@ -19,10 +19,6 @@
     display: block;   
 }
 
-    ul > .menu-item {
-        padding-right: 100px;
-    }
-
 
     #horizontalmenu li ul {
         display: none;

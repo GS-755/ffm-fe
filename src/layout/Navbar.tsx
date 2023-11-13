@@ -1,6 +1,7 @@
 import "../style/thuyen/inline.css";
 import { Link } from "react-router-dom";
 import { totalCartQty } from "../utils/total-cartqty";
+import Category from "../component/Navbar/Category";
 import fakeCart from "../utils/data/fake-cart-data";
 
 const Navbar = () => {
@@ -15,8 +16,8 @@ const Navbar = () => {
                     </div>
                     <div className="brand-name">
                         <div className="text-white">
-                            <Link to="/customer/login" className="link">Đăng nhập</Link> | 
-                            <Link to="/customer/register"  className="link"> Đăng ký</Link>
+                            <Link to="/customer/login" className="link">Đăng nhập</Link> |
+                            <Link to="/customer/register" className="link"> Đăng ký</Link>
                         </div>
                         <div className="mt-4 text brand-name-dark align-middle font-bold">
                             <Link to="/cart" className="nav-link">
@@ -43,12 +44,18 @@ const Navbar = () => {
                 </div>
             </div>
             <div id="horizontalmenu">
-                <ul className="font-bold ml-30rem">
+                <ul className="font-bold ml-25rem">
                     <li className="nav-link">
                         <Link to="/">TRANG CHỦ</Link>
                     </li>
-                    <li className="nav-link">
-                        <a href="#">DANH MỤC</a>
+                    <li className="menu-item">
+                        <Link to="#">DANH MỤC</Link>
+                        <ul className="nav-list">
+                            <Category />
+                        </ul>
+                    </li>
+                    <li className="menu-item">
+                        <Link to="/product">SẢN PHẨM</Link>
                     </li>
                     <li className="nav-link">
                         <Link to="/about">GIỚI THIỆU</Link>
