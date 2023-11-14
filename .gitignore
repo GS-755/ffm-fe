@@ -1,6 +1,8 @@
 node_modules/
 dist/
+build/
 package-lock.json
+test/
 .env
 *.log
 TEST*.xml
@@ -16,4 +18,5 @@ Thumbs.db
 *.mov
 *.wmv
 src/layout/Test/
+.vscode
 

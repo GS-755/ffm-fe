@@ -1,7 +1,8 @@
 import routes from './router';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import "./style/App.css";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>

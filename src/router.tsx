@@ -2,8 +2,10 @@ import Home from "./component/Home";
 import About from "./component/About";
 import Login from "./component/Customer/Login";
 import Register from "./component/Customer/Register";
-import { CartMain } from "./layout/Cart/CartLayout";
 import Details from "./component/Product/Details/Details";
+import { CartMain } from "./layout/Cart/CartLayout";
+import Product from "./component/Product/Product";
+import { FoodByCate } from "./component/Product/Category/FoodByCate";
 import AdminFood from "./component/Admin/Admin_Product/AdminFood";
 import AdminFC from "./component/Admin/Admin_Product/AdminFC";
 
@@ -33,8 +35,20 @@ const routes: Route[] = [
     element: <Register />,
   },
   {
-    path: "details/:id",
+    path: "/details/:id",
     element: <Details />,
+  },
+  {
+    path: '/test/:id',
+    element: <FoodByCate />
+  },  
+  {
+    path: '/product',
+    element: <Product />
+  },
+  {
+    path: '/product/:id',
+    element: <Product />
   },
   {
     path: "/admin",

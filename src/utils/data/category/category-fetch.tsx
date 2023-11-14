@@ -1,13 +1,13 @@
+import FoodCategory from '../../interface/Category';
 import { useState, useEffect } from 'react';
-import Food from '../interface/Food';
 
 interface UseFetchResult {
-  data: Food[] | null;
+  data: FoodCategory[];
   isPending: boolean;
   error: string | null;
 }
 const useFetch = (url: string): UseFetchResult => {
-  const [data, setData] = useState<Food[] | null>(null);
+  const [data, setData] = useState<FoodCategory[]>([]);
   const [isPending, setIsPending] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,7 +16,7 @@ const useFetch = (url: string): UseFetchResult => {
       fetch(url)
         .then(res => {
           if (!res.ok) {  
-            throw Error('An error occured :(((');
+            throw Error('sKiLl IsSuE :))))');
           }
           
           return res.json();
@@ -30,7 +30,7 @@ const useFetch = (url: string): UseFetchResult => {
           setIsPending(false);
           setError(err.message);
         });
-    }, 1000);
+    }, 200);
   }, [url]);
 
   return { data, isPending, error };
