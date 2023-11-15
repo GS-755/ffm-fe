@@ -1,11 +1,34 @@
 import { MainLayout } from "../Layout";
 import "../../style/thuyen/LayoutCart.css";
-import Cart from "../../component/Cart/Cart";
+//import Cart from "../../component/Cart/Cart";
 import { formatCurrency } from "../../utils/format-currency";
 import { BtnCheckout } from "../../ui/ButtonCheckout";
 import totalCartPrice from "../../utils/total-money";
+import { CartView } from "../Product/CartLayout";
+//import Cart from "../../utils/model/Cart";
+//import Food from "../../utils/interface/Food";
+//import FakeCart from "../../utils/interface/fake-cart";
+//import Food from "../../utils/interface/Food";
+// import {Food} from "../../../utils/interface/Food";
 
-const CartMain = () => {
+
+
+const CartMain= (  ) => {
+
+  const dataCartString = localStorage.getItem('dataCart');
+  let dataCart
+  let totalPrice = 0
+  if (dataCartString !== null) {
+  // Chuyển đổi chuỗi JSON thành mảng
+  dataCart = JSON.parse(dataCartString);
+
+  dataCart.forEach(item => {
+    totalPrice += item.finalPrice;
+  });
+  // In ra mảng dữ liệu đã được chuyển đổi
+  // console.log("totalPrice",totalPrice);
+}
+  
   return (
     <>
       <MainLayout>
@@ -27,7 +50,8 @@ const CartMain = () => {
                         <th></th>
                       </tr>
                     </thead>
-                    <Cart></Cart>
+                    {/* Sử dụng thông tin sản phẩm đã thêm vào giỏ hàng */}
+                      <CartView cartItem={dataCart} />
                   </table>
                 </div>
                 <div className="col-md-2"></div>
@@ -37,7 +61,7 @@ const CartMain = () => {
                   <p>
                     Tổng tiền:
                     <span className="fs-4 font-bold text-danger">
-                      &ensp;{formatCurrency(totalCartPrice())}
+                      &ensp;{totalPrice + "đ"}
                     </span>
                   </p>
                 </div>
@@ -45,6 +69,7 @@ const CartMain = () => {
                   <BtnCheckout />
                 </div>
               </div>
+              
             </div>
           </div>
         </section>

@@ -20,6 +20,9 @@ const QtyPicker: React.FC<QtyProps> = ({ maxQty }) => {
 
     return true;
   }
+
+  // console.log(qty)
+
   return (
     <>
       <div className="flex">

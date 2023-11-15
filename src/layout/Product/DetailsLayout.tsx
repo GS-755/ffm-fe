@@ -5,11 +5,29 @@ import Food from "../../utils/interface/Food";
 import React from "react";
 import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
 import { QtyPicker } from "../../ui/QtyPicker";
+import fakeCart from "../../utils/data/fake-cart-data"
 
 interface ProductViewProps {
   food: Food;
 }
+
 const DetailsView: React.FC<ProductViewProps> = ({ food }) => {
+
+  let fakeQty = undefined
+
+
+    fakeCart.forEach((fakeFood) => {
+          // console.log("fakeFood", fakeFood)
+      if (food.idFood == fakeFood.id) {
+        fakeQty = fakeFood.qty;
+      }
+    });
+
+    // console.log("fakeQty", fakeQty)
+    // console.log("fakeCart", fakeCart)
+    // console.log("food", food.idFood)
+
+
   return (
     <>
       <div className="grid grid-cols-2 gap-5 mb-5">
@@ -35,7 +53,7 @@ const DetailsView: React.FC<ProductViewProps> = ({ food }) => {
             </div>
             <div className="mt-4 pb-4 grid grid-cols-2 gap-3">
               <BtnBuy></BtnBuy>
-              <BtnAddToCart food={food} qty={3}></BtnAddToCart>
+              <BtnAddToCart food={food} qty={fakeQty}></BtnAddToCart>
             </div>
           </div>
         </div>

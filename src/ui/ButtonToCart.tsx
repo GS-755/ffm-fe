@@ -13,9 +13,32 @@ const BtnAddToCart: React.FC<ProductProps> = ({ food, qty }) => {
     qty: qty,
     finalPrice: qty * food.price
   }
-  const handleClick = (): void => {
-    cartItems.insertItem(newItem);
-  }
+
+const handleClick = (): void => {
+  console.log("Click")
+
+  const currentDataCart = localStorage.getItem('dataCart');
+  
+  if (currentDataCart !== null) {
+    // Nếu dữ liệu tồn tại, chuyển đổi dữ liệu thành đối tượng hoặc mảng
+    let dataCart = JSON.parse(currentDataCart);
+    // console.log("existingData", existingData)
+
+  // Thêm dữ liệu mới vào mảng hoặc object cũ
+  dataCart =  [...dataCart, newItem]
+
+  // Lưu dữ liệu đã được cập nhật trở lại vào localStorage
+  localStorage.setItem('dataCart', JSON.stringify(dataCart));
+} else {
+  let arrayCart = []
+  arrayCart =  [...arrayCart, newItem]
+
+  // Lưu dữ liệu mới vào localStorage với key là 'myData'
+  localStorage.setItem('dataCart', JSON.stringify(arrayCart));
+}
+window.location.reload();
+}
+
   return (
     <>
       <button

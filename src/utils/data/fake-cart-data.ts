@@ -20,6 +20,18 @@ const fakeCart: FakeCart[] = [
     qty: 5, 
     finalPrice: 5 * fakeProducts[2].proPrice
   },
+  {
+    id: 3,
+    fakeProduct: fakeProducts[3],
+    qty: 9, 
+    finalPrice: 5 * fakeProducts[3].proPrice
+  },
+  {
+    id: 4,
+    fakeProduct: fakeProducts[4],
+    qty: 7, 
+    finalPrice: 5 * fakeProducts[5].proPrice
+  },
 ];
 
 export default fakeCart;
