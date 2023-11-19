@@ -8,13 +8,13 @@ interface ProductProps {
 }
 const BtnAddToCart: React.FC<ProductProps> = ({ food, qty }) => {
   const newItem: CartInterface = {
-    id: cartItems.getItemCount(),
-    cart: food,
+    id: cartItems.getItemCount(),//
+    cart: food,  ///item.cart.idFood
     qty: qty,
     finalPrice: qty * food.price
   }
 
-const handleClick = (): void => {
+const handleClick = (id : number): void => {
   console.log("Click")
 
   const currentDataCart = localStorage.getItem('dataCart');
@@ -23,6 +23,20 @@ const handleClick = (): void => {
     // Nếu dữ liệu tồn tại, chuyển đổi dữ liệu thành đối tượng hoặc mảng
     let dataCart = JSON.parse(currentDataCart);
     // console.log("existingData", existingData)
+
+// check tồn tại
+  // const itemExists = dataCart.some(item => item.cart.idFood === id);
+
+  // if (itemExists) {
+  //   // Remove the item from the cart based on its ID
+  //   const updatedCart = dataCart.filter(item => item.id !== id);
+
+  //   // Update the local storage
+  //   localStorage.setItem('dataCart', JSON.stringify(updatedCart));
+
+  //   // Update the state to trigger a re-render
+  //   currentDataCart(updatedCart);
+  // }
 
   // Thêm dữ liệu mới vào mảng hoặc object cũ
   dataCart =  [...dataCart, newItem]

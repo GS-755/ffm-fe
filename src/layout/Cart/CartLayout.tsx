@@ -14,6 +14,7 @@ import { CartView } from "../Product/CartLayout";
 
 
 const CartMain= (  ) => {
+  
 
   const dataCartString = localStorage.getItem('dataCart');
   let dataCart
@@ -26,7 +27,7 @@ const CartMain= (  ) => {
     totalPrice += item.finalPrice;
   });
   // In ra mảng dữ liệu đã được chuyển đổi
-  // console.log("totalPrice",totalPrice);
+  console.log("totalPrice",totalPrice);
 }
   
   return (
@@ -52,6 +53,7 @@ const CartMain= (  ) => {
                     </thead>
                     {/* Sử dụng thông tin sản phẩm đã thêm vào giỏ hàng */}
                       <CartView cartItem={dataCart} />
+                      {/* <CartView /> */}
                   </table>
                 </div>
                 <div className="col-md-2"></div>
@@ -61,7 +63,7 @@ const CartMain= (  ) => {
                   <p>
                     Tổng tiền:
                     <span className="fs-4 font-bold text-danger">
-                      &ensp;{totalPrice + "đ"}
+                      &ensp;{formatCurrency(totalPrice)}
                     </span>
                   </p>
                 </div>

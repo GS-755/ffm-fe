@@ -19,7 +19,7 @@ useEffect(() => {
       const dataCart = JSON.parse(dataCartString);
 
       // Sử dụng reduce để tính tổng các qty trong mảng dataCart
-      const total = dataCart.reduce((accumulator, item) => accumulator + item.qty, 0);
+      const total = dataCart.reduce((accumulator: number) => accumulator + 1, 0);
 
       // Cập nhật state totalItem với tổng đã tính được
       setTotalItem(total);
