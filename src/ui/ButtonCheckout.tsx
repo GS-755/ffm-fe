@@ -1,8 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import "../style/tuan/form.css";
 
-const BtnCheckout = () => {
-  const [showModal, setShowModal] = React.useState(false);
+const BtnCheckout = (): JSX.Element => {
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -37,7 +37,8 @@ const BtnCheckout = () => {
                   </div>
                   {/*body*/}
                   <div className="relative p-6 text-start">
-                    <form>
+                    { /*form start*/ }
+                    <form action="#" method="post"> 
                       <div style={{ marginBottom: "1rem" }}>
                         <label htmlFor="email" style={{ display: "block", color: "#333" }}>Tên khách hàng</label>
                         <input
