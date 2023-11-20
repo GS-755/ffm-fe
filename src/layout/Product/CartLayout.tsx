@@ -1,36 +1,20 @@
-// import FakeCart from "../../utils/interface/fake-cart";
 import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
 import { formatCurrency } from "../../utils/format-currency";
 import { useState } from "react";
 
-// interface CartViewProps {
-// cartItem: FakeCart;
-// }
-// const CartView = ({ cartItem }: CartViewProps) => {
 const CartView = ({ cartItem }) => {
-
-  console.log("dataCart", cartItem)
-
   const [dataItemCurret, setDataCurrent] = useState(cartItem)
-  // console.log("dataItemCurret", dataItemCurret)
-
-
   const handleDeleteClick = (itemId: number) => {
     if (window.confirm('Xác nhận hủy mua món này')) {
-
       const dataLocal = localStorage.getItem('dataCart');
       // localStorage.setItem('dataCart', JSON.stringify(updatedCart));
       if (dataLocal !== null) {
         // Chuyển đổi chuỗi JSON thành mảng
-
         const dataCartTemp = JSON.parse(dataLocal); console.log("dataLocal", dataLocal)
-        // console.log("dataCartTemp", dataCartTemp)
-
         const updatedCart = dataCartTemp.filter(item => item.cart.idFood !== itemId);
-        // console.log("updatedCart", updatedCart)
-
         localStorage.setItem('dataCart', JSON.stringify(updatedCart));
         setDataCurrent(updatedCart)
+
         window.location.reload()
       }
     }
