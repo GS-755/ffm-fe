@@ -1,17 +1,18 @@
 import { Footer } from './Footer';
 import { ReactNode } from 'react';
-import Navbar from './Navbar';
+import { Navbar } from './Navbar';
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div>
-      <Navbar></Navbar>
+    <>
+      <Navbar />
+
       <main className="h-full max-h-max max-w-full overflow-hidden">
-        {children}  
+        {children}
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

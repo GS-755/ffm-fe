@@ -9,7 +9,9 @@
     align-items: center;
     text-align: center;
 }
-
+.align-content-center {
+    align-items: center !important;
+}
 .popup-content {
     height: 270px;
     width: 500px;
