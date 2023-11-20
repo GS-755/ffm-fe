@@ -6,7 +6,7 @@ import Food from '../../../utils/interface/Food';
 const Details = () => {
   const { id } = useParams();
   const { data: foods, error, isPending } = useFetch(import.meta.env.VITE_API_PATH + '/food/' + id);
-  const food: Food = foods?.find((k: Food) => k.idFood === Number(id));
+  const food: Food = foods?.find((k: Food) => k.idFood === Number(id))!;
   return (
     <>
       {

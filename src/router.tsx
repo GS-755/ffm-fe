@@ -6,6 +6,7 @@ import { CartMain } from "./layout/Cart/CartLayout";
 import Details from "./component/Product/Details/Details";
 import AdminFood from "./component/Admin/Admin_Product/AdminFood";
 import AdminFC from "./component/Admin/Admin_Product/AdminFC";
+import FoodDetail from "./component/Admin/Admin_Product/AdminDetailFood";
 
 interface Route {
   path: string;
@@ -39,6 +40,10 @@ const routes: Route[] = [
   {
     path: "/admin",
     element: <AdminFood />,
+  },
+  {
+    path: "/admin/:id",
+    element: <FoodDetail />
   },
   {
     path: "/admin-fc",

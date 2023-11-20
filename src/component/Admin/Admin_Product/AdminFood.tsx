@@ -1,9 +1,18 @@
+import { Link } from "react-router-dom";
+import useFetch from "../../../utils/data/json-fetch";
 import AdminLayout from "../AdminLayout";
 
+
 export default function AdminFood() {
+  const { data: foods, isPending, error } = useFetch(import.meta.env.VITE_API_PATH + '/food');
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+
     return (
       <AdminLayout>
-        {/* Main */}
         <div className=" leading-6 px-6 ">
           {/* Title */}
           <div className="flex items-center justify-between leading-6 mb-10">
@@ -89,91 +98,29 @@ export default function AdminFood() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      1
-                    </th>
-                    <td className="px-6 py-4">Hambuger cá</td>
-                    <td className="px-6 py-4">60.000đ</td>
-                    <td className="px-6 py-4">10 cái</td>
-                    <td className="px-6 py-4">
-                      <a href="#">Hambuger</a>
-                    </td>
-                    <td className="px-6 py-4 text-blue-500 font-semibold hover:underline cursor-pointer">
-                      Edit
-                    </td>
-                  </tr>
-                  <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      1
-                    </th>
-                    <td className="px-6 py-4">Hambuger cá</td>
-                    <td className="px-6 py-4">60.000đ</td>
-                    <td className="px-6 py-4">10 cái</td>
-                    <td className="px-6 py-4">
-                      <a href="#">Hambuger</a>
-                    </td>
-                    <td className="px-6 py-4 text-blue-500 font-semibold hover:underline cursor-pointer">
-                      Edit
-                    </td>
-                  </tr>
-                  <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      1
-                    </th>
-                    <td className="px-6 py-4">Hambuger cá</td>
-                    <td className="px-6 py-4">60.000đ</td>
-                    <td className="px-6 py-4">10 cái</td>
-                    <td className="px-6 py-4">
-                      <a href="#">Hambuger</a>
-                    </td>
-                    <td className="px-6 py-4 text-blue-500 font-semibold hover:underline cursor-pointer">
-                      Edit
-                    </td>
-                  </tr>
-                  <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      1
-                    </th>
-                    <td className="px-6 py-4">Hambuger cá</td>
-                    <td className="px-6 py-4">60.000đ</td>
-                    <td className="px-6 py-4">10 cái</td>
-                    <td className="px-6 py-4">
-                      <a href="#">Hambuger</a>
-                    </td>
-                    <td className="px-6 py-4 text-blue-500 font-semibold hover:underline cursor-pointer">
-                      Edit
-                    </td>
-                  </tr>
-                  <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      1
-                    </th>
-                    <td className="px-6 py-4">Hambuger cá</td>
-                    <td className="px-6 py-4">60.000đ</td>
-                    <td className="px-6 py-4">10 cái</td>
-                    <td className="px-6 py-4">
-                      <a href="#">Hambuger</a>
-                    </td>
-                    <td className="px-6 py-4 text-blue-500 font-semibold hover:underline cursor-pointer">
-                      Edit
-                    </td>
-                  </tr>
+                  {foods && (
+                    <>
+                      {foods.map((food) => (
+                        <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                          <th
+                            scope="row"
+                            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          >
+                            {food.idFood}
+                          </th>
+                          <td className="px-6 py-4">{food.name}</td>
+                          <td className="px-6 py-4">{food.price}</td>
+                          <td className="px-6 py-4">{food.quantity}</td>
+                          <td className="px-6 py-4">
+                            <a href="#">{food.idFc}</a>
+                          </td>
+                          <td className="px-6 py-4 text-blue-500 font-semibold hover:underline cursor-pointer">
+                            <Link to={`/admin/${food.idFood}`}>Edit</Link>
+                          </td>
+                        </tr>
+                      ))}
+                    </>
+                  )}
                 </tbody>
               </table>
             </div>
@@ -181,7 +128,6 @@ export default function AdminFood() {
           </div>
           {/* End Dashboard */}
         </div>
-        {/* End Main */}
       </AdminLayout>
     );
 }
