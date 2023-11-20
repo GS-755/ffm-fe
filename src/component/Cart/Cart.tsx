@@ -1,9 +1,9 @@
-import { CartView } from "../../layout/Product/CartLayout";
+import { CartView } from "../../layout/Cart/CartView";
 
 const Cart = () => {
   return (
     <>
-      <CartView cartItem={null} />
+      <CartView />
     </>
   )
 }

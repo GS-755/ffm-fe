@@ -2,7 +2,7 @@ import "../../style/thuyen/LayoutCart.css";
 import { MainLayout } from "../Layout";
 import { formatCurrency } from "../../utils/format-currency";
 import { BtnCheckout } from "../../ui/ButtonCheckout";
-import { CartView } from "../Product/CartLayout";
+import { CartView } from "./CartView";
 
 const CartMain = (): JSX.Element => {
   return (
@@ -26,7 +26,7 @@ const CartMain = (): JSX.Element => {
                         <th></th>
                       </tr>
                     </thead>
-                    <CartView cartItem={null} />
+                    <CartView />
                   </table>
                 </div>
                 <div className="col-md-2"></div>
