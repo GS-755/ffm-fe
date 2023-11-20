@@ -1,6 +1,6 @@
 import "../style/thuyen/inline.css";
 import { Link } from "react-router-dom";
-import { totalCartQty } from "../utils/total-cartqty";
+import { useState, useEffect } from "react";
 import Category from "../component/Navbar/Category";
 
 const Navbar = () => {
