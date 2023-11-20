@@ -2,29 +2,27 @@ import "../style/thuyen/inline.css";
 import { Link } from "react-router-dom";
 import { totalCartQty } from "../utils/total-cartqty";
 import Category from "../component/Navbar/Category";
-import fakeCart from "../utils/data/fake-cart-data";
-import {useState, useEffect} from "react"
 
 const Navbar = () => {
 
     const [totalItem, setTotalItem] = useState(0)
 
-// let dataCart = [];
+    // let dataCart = [];
 
-useEffect(() => {
-    const dataCartString = localStorage.getItem('dataCart');
+    useEffect(() => {
+        const dataCartString = localStorage.getItem('dataCart');
 
-    if (dataCartString !== null) {
-      // Chuyển đổi chuỗi JSON thành mảng
-      const dataCart = JSON.parse(dataCartString);
+        if (dataCartString !== null) {
+            // Chuyển đổi chuỗi JSON thành mảng
+            const dataCart = JSON.parse(dataCartString);
 
-      // Sử dụng reduce để tính tổng các qty trong mảng dataCart
-      const total = dataCart.reduce((accumulator: number) => accumulator + 1, 0);
+            // Sử dụng reduce để tính tổng các qty trong mảng dataCart
+            const total = dataCart.reduce((accumulator: number) => accumulator + 1, 0);
 
-      // Cập nhật state totalItem với tổng đã tính được
-      setTotalItem(total);
-    }
-}, [totalItem]);
+            // Cập nhật state totalItem với tổng đã tính được
+            setTotalItem(total);
+        }
+    }, [totalItem]);
 
     return (
         <>
