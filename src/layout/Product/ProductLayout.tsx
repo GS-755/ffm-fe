@@ -2,7 +2,7 @@ import Food from "../../utils/interface/Food";
 import { BtnBuy } from "../../ui/ButtonBuy";
 import { formatCurrency } from "../../utils/format-currency";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import getImageUri from "../../utils/fetch-image";
+import getImageUri from "../../utils/get-image-url";
 
 interface ProductListProps {
   food: Food;
