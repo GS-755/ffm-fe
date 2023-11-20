@@ -1,18 +1,15 @@
-import { useParams } from "react-router-dom"
-import useFetch from "../../../utils/data/food/food-fetch";
-import Food from "../../../utils/interface/Food";
-import { ProductView } from "../../../layout/Product/ProductLayout";
-import ToParams from "../../../utils/model/Params";
-import { MainLayout } from "../../../layout/Layout";
+import { MainLayout } from "../../layout/Layout";
+import { ProductView } from "../../layout/Product/ProductLayout";
+import useFetch from "../../utils/data/food/food-fetch";
+import Food from "../../utils/interface/Food";
 
-const FoodByCate = () => {
-  const idFc = useParams();
+const ProductAll = (): JSX.Element => {
   const { data: foods, isPending, error } = useFetch(import.meta.env.VITE_API_PATH + '/food');
   return (
     <>
       <MainLayout>
         <hr className="mt-3 mb-3"></hr>
-        <h1 className="text-center font-bold text-3xl text-uppercase">SẢN PHẨM</h1>
+        <h1 className="text-center font-bold text-3xl text-uppercase">DANH SÁCH SẢN PHẨM</h1>
         <hr className="mt-3 mb-3"></hr>
         {
           error &&
@@ -27,8 +24,7 @@ const FoodByCate = () => {
             <div className="grid grid-cols-4 gap-3 fs-5">
               {
                 foods &&
-                foods.map((k: Food) => (k != null && k.idFc === ToParams.getId(idFc))
-                  && (
+                foods.map((k: Food) => (
                     <ProductView key={k.idFood} food={k} />
                   ))
               }
@@ -39,6 +35,6 @@ const FoodByCate = () => {
       </MainLayout>
     </>
   );
-}
+};
 
-export { FoodByCate };
+export default ProductAll;
