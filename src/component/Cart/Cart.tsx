@@ -1,15 +1,9 @@
-import fakeCart from "../../utils/data/fake-cart-data";
-import { CartView } from "../../layout/Product/CartLayout";
+import { CartView } from "../../layout/Cart/CartView";
 
 const Cart = () => {
   return (
     <>
-      {fakeCart.map(cartItem => (
-        <CartView
-          key={cartItem.fakeProduct.proId}
-          cartItem={cartItem}
-        />
-      ))}
+      <CartView />
     </>
   )
 }
