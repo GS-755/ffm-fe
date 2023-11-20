@@ -8,5 +8,6 @@ interface Food {
   idMaterial: number;
   image: string;
 }
+
 export default Food;
 
