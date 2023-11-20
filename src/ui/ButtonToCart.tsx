@@ -4,7 +4,7 @@ interface ProductProps {
   food: Food;
   qty: number;
 }
-const BtnAddToCart: React.FC<ProductProps> = ({ food, qty }) => {
+const BtnAddToCart: React.FC<ProductProps> = () => {
   return (
     <>
       <button
