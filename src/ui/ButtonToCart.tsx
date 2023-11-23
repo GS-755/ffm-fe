@@ -1,14 +1,40 @@
 import Food from "../utils/interface/Food";
+import CartInterface from "../utils/interface/Cart";
 
 interface ProductProps {
   food: Food;
   qty: number;
 }
-const BtnAddToCart: React.FC<ProductProps> = () => {
+const BtnAddToCart: React.FC<ProductProps> = ({ food, qty }) => {
+  const newItem: CartInterface = {
+    id: food.idFood,
+    cart: food,
+    qty: qty,
+    finalPrice: qty * food.price
+  }
+  const handleClick = (): void => {
+    const currentDataCart = localStorage.getItem('dataCart');
+    if (currentDataCart !== null) {
+      // Nếu dữ liệu tồn tại, chuyển đổi dữ liệu thành đối tượng hoặc mảng
+      let dataCart = JSON.parse(currentDataCart);
+      dataCart = [...dataCart, newItem]
+      // Lưu dữ liệu đã được cập nhật trở lại vào localStorage
+      localStorage.setItem('dataCart', JSON.stringify(dataCart));
+    }
+    else {
+      let arrayCart: CartInterface[] = []
+      arrayCart = [...arrayCart, newItem]
+      // Lưu dữ liệu mới vào localStorage với key là 'myData'
+      localStorage.setItem('dataCart', JSON.stringify(arrayCart));
+    }
+    window.location.reload();
+  }
+
   return (
     <>
       <button
-        className="bg-orange-300 hover:bg-orange-400 py-2 h-12 px-4 mx-10 rounded inline-flex items-center">
+        className="bg-orange-300 hover:bg-orange-400 py-2 h-12 px-4 mx-10 rounded inline-flex items-center"
+        onClick={() => handleClick()}>
         <div className="text-center text-white font-bold">
           <i className="fa-solid fa-cart-shopping fill-current w-4 h-4 mr-2"></i>
           <span>Thêm giỏ hàng</span>

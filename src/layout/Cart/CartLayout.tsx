@@ -2,9 +2,23 @@ import "../../style/thuyen/LayoutCart.css";
 import { MainLayout } from "../Layout";
 import { formatCurrency } from "../../utils/format-currency";
 import { BtnCheckout } from "../../ui/ButtonCheckout";
+import CartInterface from "../../utils/interface/Cart";
 import { CartView } from "./CartView";
 
-const CartMain = (): JSX.Element => {
+const CartMain = () => {
+  const dataCartString = localStorage.getItem('dataCart');
+  let dataCart;
+  let totalPrice = 0;
+  if (dataCartString !== null) {
+    // Chuyển đổi chuỗi JSON thành mảng
+    dataCart = JSON.parse(dataCartString);
+    dataCart.forEach((item: CartInterface) => {
+      totalPrice += item.finalPrice;
+    });
+    // In ra mảng dữ liệu đã được chuyển đổi
+    console.log("totalPrice", totalPrice);
+  }
+
   return (
     <>
       <MainLayout>
@@ -26,7 +40,9 @@ const CartMain = (): JSX.Element => {
                         <th></th>
                       </tr>
                     </thead>
-                    <CartView />
+                    {/* Sử dụng thông tin sản phẩm đã thêm vào giỏ hàng */}
+                    <CartView cartItem={dataCart} />
+                    {/* <CartView /> */}
                   </table>
                 </div>
                 <div className="col-md-2"></div>
@@ -36,7 +52,7 @@ const CartMain = (): JSX.Element => {
                   <p>
                     Tổng tiền:
                     <span className="fs-4 font-bold text-danger">
-                      &ensp;{formatCurrency(99999)}
+                      &ensp;{formatCurrency(totalPrice)}
                     </span>
                   </p>
                 </div>
@@ -44,7 +60,6 @@ const CartMain = (): JSX.Element => {
                   <BtnCheckout />
                 </div>
               </div>
-
             </div>
           </div>
         </section>
