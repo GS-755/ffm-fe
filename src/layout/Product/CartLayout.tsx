@@ -1,34 +1,18 @@
-// import FakeCart from "../../utils/interface/fake-cart";
-import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
 import { formatCurrency } from "../../utils/format-currency";
 import { useState } from "react";
+import CartInterface from "../../utils/interface/Cart";
+import getImageUri from "../../utils/fetch-image";
 
-// interface CartViewProps {
-// cartItem: FakeCart;
-// }
-// const CartView = ({ cartItem }: CartViewProps) => {
 const CartView = ({ cartItem }) => {
-
-  console.log("dataCart", cartItem)
-
-  const [dataItemCurret, setDataCurrent] = useState(cartItem)
-  // console.log("dataItemCurret", dataItemCurret)
-
-
+  console.log("dataCart", cartItem);
+  const [dataItemCurret, setDataCurrent] = useState(cartItem);
   const handleDeleteClick = (itemId: number) => {
     if (window.confirm('Xác nhận hủy mua món này')) {
-
       const dataLocal = localStorage.getItem('dataCart');
-      // localStorage.setItem('dataCart', JSON.stringify(updatedCart));
       if (dataLocal !== null) {
         // Chuyển đổi chuỗi JSON thành mảng
-
         const dataCartTemp = JSON.parse(dataLocal); console.log("dataLocal", dataLocal)
-        // console.log("dataCartTemp", dataCartTemp)
-
-        const updatedCart = dataCartTemp.filter(item => item.cart.idFood !== itemId);
-        // console.log("updatedCart", updatedCart)
-
+        const updatedCart = dataCartTemp.filter((item: CartInterface) => item.cart.idFood !== itemId);
         localStorage.setItem('dataCart', JSON.stringify(updatedCart));
         setDataCurrent(updatedCart)
         window.location.reload()
@@ -39,10 +23,10 @@ const CartView = ({ cartItem }) => {
   return (
     <>
       <tbody className="align-content-center">
-        {dataItemCurret && dataItemCurret.length > 0 && cartItem.map(item => (
+        {dataItemCurret && dataItemCurret.length > 0 && cartItem.map((item: CartInterface) => (
           <tr key={item.id}>
             <td>
-              <img src={ProductSample} height="70" width="70" style={{ borderRadius: "16px" }} alt="Food :D" />
+              <img src={getImageUri(item.cart.image)} height="70" width="70" style={{ borderRadius: "16px" }} alt="Food :D" />
             </td>
             <td>{item.cart.name}</td>
             <td>{formatCurrency(item.cart.price)}</td>
