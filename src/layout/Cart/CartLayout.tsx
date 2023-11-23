@@ -1,5 +1,5 @@
-import { MainLayout } from "../Layout";
 import "../../style/thuyen/LayoutCart.css";
+import { MainLayout } from "../Layout";
 import { formatCurrency } from "../../utils/format-currency";
 import { BtnCheckout } from "../../ui/ButtonCheckout";
 import { CartView } from "../Product/CartLayout";
@@ -52,7 +52,7 @@ const CartMain = () => {
                   <p>
                     Tổng tiền:
                     <span className="fs-4 font-bold text-danger">
-                      &ensp;{formatCurrency(totalPrice)}
+                      &ensp;{formatCurrency(99999)}
                     </span>
                   </p>
                 </div>
