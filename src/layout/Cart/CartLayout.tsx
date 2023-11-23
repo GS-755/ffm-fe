@@ -2,8 +2,8 @@ import "../../style/thuyen/LayoutCart.css";
 import { MainLayout } from "../Layout";
 import { formatCurrency } from "../../utils/format-currency";
 import { BtnCheckout } from "../../ui/ButtonCheckout";
-import { CartView } from "../Product/CartLayout";
 import CartInterface from "../../utils/interface/Cart";
+import { CartView } from "./CartView";
 
 const CartMain = () => {
   const dataCartString = localStorage.getItem('dataCart');
@@ -52,7 +52,7 @@ const CartMain = () => {
                   <p>
                     Tổng tiền:
                     <span className="fs-4 font-bold text-danger">
-                      &ensp;{formatCurrency(99999)}
+                      &ensp;{formatCurrency(totalPrice)}
                     </span>
                   </p>
                 </div>

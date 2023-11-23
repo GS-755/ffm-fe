@@ -5,7 +5,6 @@ import { QtyPicker } from "../../ui/QtyPicker";
 import Food from "../../utils/interface/Food";
 import React from "react";
 import getImageUri from "../../utils/get-image-url";
-import getImageUri from "../../utils/fetch-image";
 
 interface ProductViewProps {
   food: Food;
