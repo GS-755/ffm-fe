@@ -1,8 +1,8 @@
 import Food from "../../utils/interface/Food";
 import { BtnBuy } from "../../ui/ButtonBuy";
-import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
 import { formatCurrency } from "../../utils/format-currency";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import getImageUri from "../../utils/get-image-url";
 
 interface ProductListProps {
   food: Food;
@@ -15,7 +15,7 @@ const ProductView: React.FC<ProductListProps> = ({ food }) => {
   return (
     <>
       <div className="max-w-sm rounded overflow-hidden shadow-lg pb-4" onClick={() => handleClick(food)}>
-        <img className="w-full" src={ProductSample} alt="Sample product" />
+        <img className="w-full" src={getImageUri(food.image)} alt={food.des} />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">
             {food.name}

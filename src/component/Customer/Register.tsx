@@ -1,15 +1,7 @@
 import { MainLayout } from "../../layout/Layout";
-import { useState } from "react";
 import "../../style/tuan/form.css";
 
-function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Xử lý đăng ký ở đây
-  };
+const Register = () => {
   return (
     <MainLayout>
       <div className="main-frame">
@@ -17,15 +9,32 @@ function Register() {
           <div style={{ textAlign: "center", marginBottom: "1rem" }}>
             <h2 className="login-header mt-3">Đăng ký tài khoản</h2>
           </div>
-          <form onSubmit={handleRegister}>
+          <form action={import.meta.env.VITE_API_PATH + 'customer/signup'} method="post">
+            <div style={{ marginBottom: "1rem" }}>
+              <label htmlFor="name" style={{ display: "block", color: "#333" }}>Tên khách hàng</label>
+              <input
+                type="text"
+                id="name"
+                className="form-input"
+                name="name"
+              />
+            </div>
             <div style={{ marginBottom: "1rem" }}>
               <label htmlFor="email" style={{ display: "block", color: "#333" }}>Email</label>
               <input
                 type="email"
                 id="email"
                 className="form-input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+              />
+            </div>
+            <div style={{ marginBottom: "1rem" }}>
+              <label htmlFor="address" style={{ display: "block", color: "#333" }}>Địa chỉ</label>
+              <input
+                type="text"
+                id="address"
+                className="form-input"
+                name="address"
               />
             </div>
             <div style={{ marginBottom: "1rem" }}>
@@ -33,28 +42,18 @@ function Register() {
               <input
                 type="password"
                 id="password"
+                name="password"
                 className="form-input"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div style={{ marginBottom: "1rem" }}>
-              <label htmlFor="confirmPassword" style={{ display: "block", color: "#333" }}>Xác nhận lại mật khẩu</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                className="form-input"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
-            <button
+
+            <input
               type="submit"
-              style={{ width: "100%", background: "#FFCC66", color: "#fff", padding: "0.5rem", borderRadius: "15px", cursor: "pointer" }}
-            >
-              Đăng ký
-            </button>
+              value="Đăng ký"
+              className="btn-form hover:bg-orange-500 bg-yellow-500 rounded-3xl mt-4"
+            />
           </form>
+
           <button style={{ width: "100%", padding: "0.5rem", border: "none", background: "transparent", color: "#007bff", cursor: "pointer" }}>
             Tôi đã có tài khoản ?
           </button>

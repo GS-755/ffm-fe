@@ -1,6 +1,6 @@
 import { MainLayout } from "../layout/Layout";
 import { Hero } from "./Hero/Hero";
-import Product from "./Product/Product";
+import Product from "./Product/ProductHome";
 
 const Home = () => {
   return (
