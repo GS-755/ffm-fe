@@ -15,7 +15,8 @@ const PaymentStatus = (): JSX.Element => {
   const params: VNPayProps = Object.fromEntries(searchParams.entries());
   const queryString = paramsToString(params);
 
-  const { data, isPending, error } = useFetch(import.meta.env.VITE_API_PATH + '/api/vnpay/vnpay_return?' + queryString);
+  const { data, isPending, error } = useFetch(import.meta.env.VITE_API_PATH + 'vnpay/vnpay_return?' + queryString);
+  console.log(import.meta.env.VITE_API_PATH + '/api/vnpay/vnpay_return?' + queryString);
 
   return (
     <>

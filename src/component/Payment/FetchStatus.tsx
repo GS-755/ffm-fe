@@ -23,14 +23,14 @@ const useFetch = (url: string): VNPayResultProps => {
         })
         .then(data => {
           setData(data);
-          setIsPending(isPending);
+          setIsPending(false);
           setError(null);
         })
         .catch(err => {
           setIsPending(false);
           setError(err.message);
         });
-    }, 5000)
+    }, 1000)
   }, [url]);
 
   return { data, isPending, error };
