@@ -1,4 +1,4 @@
-import Food from "../../utils/interface/Food";
+  import Food from "../../utils/interface/Food";
 import { BtnBuy } from "../../ui/ButtonBuy";
 import { formatCurrency } from "../../utils/format-currency";
 import { NavigateFunction, useNavigate } from "react-router-dom";

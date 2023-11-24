@@ -2,6 +2,7 @@ import { formatCurrency } from "../../utils/format-currency";
 import { useState } from "react";
 import CartInterface from "../../utils/interface/Cart";
 import getImageUri from "../../utils/get-image-url";
+import { QtyPicker } from "../../ui/QtyPicker";
 
 const CartView = ({ cartItem }) => {
   console.log("dataCart", cartItem);
@@ -11,11 +12,12 @@ const CartView = ({ cartItem }) => {
       const dataLocal = localStorage.getItem('dataCart');
       if (dataLocal !== null) {
         // Chuyển đổi chuỗi JSON thành mảng
-        const dataCartTemp = JSON.parse(dataLocal); console.log("dataLocal", dataLocal)
+        const dataCartTemp = JSON.parse(dataLocal); 
+        console.log("dataLocal", dataLocal);
         const updatedCart = dataCartTemp.filter((item: CartInterface) => item.cart.idFood !== itemId);
         localStorage.setItem('dataCart', JSON.stringify(updatedCart));
-        setDataCurrent(updatedCart)
-        window.location.reload()
+        setDataCurrent(updatedCart);
+        window.location.reload();
       }
     }
   };
@@ -31,11 +33,11 @@ const CartView = ({ cartItem }) => {
             <td>{item.cart.name}</td>
             <td>{formatCurrency(item.cart.price)}</td>
             <td>
-              <form>
-                <input className="bg-gray-200" type="number" value={item.qty} name="cartQuantity" />
-                <input type="submit" value="Cập nhật" name="submitBtn" />
-                <p>(Còn lại: 999)</p>
-              </form>
+              <div className="flex items-center">
+                <QtyPicker key={item.cart.idFood} maxQty={item.cart.quantity} ></QtyPicker>
+              </div>
+              <input type="submit" value="Cập nhật" name="submitBtn" />
+              <p>(Còn lại: 999)</p>
             </td>
             <td>{formatCurrency(item.finalPrice)}</td>
             <td>
