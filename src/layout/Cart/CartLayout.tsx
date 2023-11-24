@@ -15,8 +15,6 @@ const CartMain = () => {
     dataCart.forEach((item: CartInterface) => {
       totalPrice += item.finalPrice;
     });
-    // In ra mảng dữ liệu đã được chuyển đổi
-    console.log("totalPrice", totalPrice);
   }
 
   return (
