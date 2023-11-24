@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../../utils/data/json-fetch";
-import AdminLayout from "../AdminLayout";
 import ProductSample from "../../../assets/image/product/unsplash-product-sample.jpg";
+import useFetch from "../../../utils/data/food/food-fetch";
+import AdminLayout from "../AdminLayout";
 
 export default function FoodDetail() {
   const { id } = useParams();
@@ -40,9 +40,7 @@ export default function FoodDetail() {
               </div>
 
               <div>
-                <p className="text-gray-600">
-                  {food.des}
-                </p>
+                <p className="text-gray-600">{food.des}</p>
                 <p className="text-gray-600">{food.price}</p>
                 <p className="text-gray-600">{food.quantity}</p>
               </div>

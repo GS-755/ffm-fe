@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import useFetch from "../../../utils/data/json-fetch";
 import AdminLayout from "../AdminLayout";
+import useFetch from "../../../utils/data/food/food-fetch";
 
 
 export default function AdminFood() {
@@ -10,6 +10,7 @@ export default function AdminFood() {
     return <p>Error: {error}</p>;
   }
 
+  if(isPending) { return }
 
     return (
       <AdminLayout>
