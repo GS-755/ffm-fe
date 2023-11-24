@@ -9,12 +9,16 @@ const CartMain = () => {
   const dataCartString = localStorage.getItem('dataCart');
   let dataCart;
   let totalPrice = 0;
+  console.log(dataCart);
   if (dataCartString !== null) {
     // Chuyển đổi chuỗi JSON thành mảng
     dataCart = JSON.parse(dataCartString);
     dataCart.forEach((item: CartInterface) => {
       totalPrice += item.finalPrice;
+      console.log(totalPrice);
+      console.log(item.finalPrice);
     });
+    
   }
 
   return (
