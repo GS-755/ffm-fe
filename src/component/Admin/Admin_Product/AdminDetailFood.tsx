@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
+import ProductSample from "../../../assets/image/product/unsplash-product-sample.jpg";
 import useFetch from "../../../utils/data/food/food-fetch";
 import AdminLayout from "../AdminLayout";
-import ProductSample from "../../../assets/image/product/unsplash-product-sample.jpg";
+import getImageUri from "../../../utils/get-image-url";
+import { formatCurrency } from "../../../utils/format-currency";
 
 export default function FoodDetail() {
   const { id } = useParams();
@@ -31,7 +33,7 @@ export default function FoodDetail() {
 
               <div className="mb-4 w-52 h-auto">
                 <img
-                  src={ProductSample}
+                  src={getImageUri(food.image)}
                   alt="Product Image"
                   className="w-full h-auto rounded-md"
                 />
@@ -39,7 +41,7 @@ export default function FoodDetail() {
 
               <div>
                 <p className="text-gray-600">{food.des}</p>
-                <p className="text-gray-600">{food.price}</p>
+                <p className="text-gray-600">{formatCurrency(food.price)}</p>
                 <p className="text-gray-600">{food.quantity}</p>
               </div>
             </div>

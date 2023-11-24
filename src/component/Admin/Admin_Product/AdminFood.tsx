@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import AdminLayout from "../AdminLayout";
 import useFetch from "../../../utils/data/food/food-fetch";
+import { formatCurrency } from "../../../utils/format-currency";
 
 
 export default function AdminFood() {
@@ -19,7 +20,7 @@ export default function AdminFood() {
         <div className="flex items-center justify-between leading-6 mb-10">
           <h4 className="ml-6 font-bold text-2xl leading-9">Món ăn</h4>
           <button className="flex items-center bg-[#212b36] text-white py-2 px-4 rounded-lg text-sm font-bold">
-            + Thêm món ăn
+            <Link to={`/admin/create`}>+ Thêm món ăn</Link>
           </button>
         </div>
         {/* End Title */}
@@ -110,7 +111,9 @@ export default function AdminFood() {
                           {food.idFood}
                         </th>
                         <td className="px-6 py-4">{food.name}</td>
-                        <td className="px-6 py-4">{food.price}</td>
+                        <td className="px-6 py-4">
+                          {formatCurrency(food.price)}
+                        </td>
                         <td className="px-6 py-4">{food.quantity}</td>
                         <td className="px-6 py-4">
                           <a href="#">{food.idFc}</a>
