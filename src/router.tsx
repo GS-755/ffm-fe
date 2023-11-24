@@ -4,11 +4,11 @@ import Login from "./component/Customer/Login";
 import Register from "./component/Customer/Register";
 import Details from "./component/Product/Details/Details";
 import { CartMain } from "./layout/Cart/CartLayout";
-import Product from "./component/Product/Product";
 import { FoodByCate } from "./component/Product/Category/FoodByCate";
 import AdminFood from "./component/Admin/Admin_Product/AdminFood";
 import AdminFC from "./component/Admin/Admin_Product/AdminFC";
 import FoodDetail from "./component/Admin/Admin_Product/AdminDetailFood";
+import ProductAll from "./component/Product/ProductAll";
 
 interface Route {
   path: string;
@@ -40,16 +40,12 @@ const routes: Route[] = [
     element: <Details />,
   },
   {
-    path: '/test/:id',
+    path: '/product/:id',
     element: <FoodByCate />
   },  
   {
     path: '/product',
-    element: <Product />
-  },
-  {
-    path: '/product/:id',
-    element: <Product />
+    element: <ProductAll />
   },
   {
     path: "/admin",

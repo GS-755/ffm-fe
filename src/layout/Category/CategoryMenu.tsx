@@ -8,7 +8,7 @@ const CategoryMenu: React.FC<CategoryProps> = ({ foodCategory }) => {
   return (
     <>
       <li className="nav-li">
-        <Link to={'/test/' + String(foodCategory.idFc)}>{foodCategory.name}</Link>
+        <Link to={'/product/' + String(foodCategory.idFc)}>{foodCategory.name}</Link>
       </li>
     </>
   );

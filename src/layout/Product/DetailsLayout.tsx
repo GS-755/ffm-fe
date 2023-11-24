@@ -1,19 +1,20 @@
 import { BtnBuy } from "../../ui/ButtonBuy";
 import { BtnAddToCart } from "../../ui/ButtonToCart";
 import { formatCurrency } from "../../utils/format-currency";
+import { QtyPicker } from "../../ui/QtyPicker";
 import Food from "../../utils/interface/Food";
 import React from "react";
-import ProductSample from "../../assets/image/product/unsplash-product-sample.jpg";
-import { QtyPicker } from "../../ui/QtyPicker";
+import getImageUri from "../../utils/get-image-url";
 
 interface ProductViewProps {
   food: Food;
 }
+
 const DetailsView: React.FC<ProductViewProps> = ({ food }) => {
   return (
     <>
       <div className="grid grid-cols-2 gap-5 mb-5">
-        <img className="mt-4 rounded-lg" src={ProductSample} alt="Food details"></img>
+        <img className="mt-4 rounded-lg" src={getImageUri(food.image)} alt="Food details"></img>
         <div className="mt-4">
           <div className=" mx-3 font-semibold">
             <h2 className="my-2 font-semibold text-3xl pl-5 py-1 rounded-lg">{food.name}</h2>
@@ -35,7 +36,7 @@ const DetailsView: React.FC<ProductViewProps> = ({ food }) => {
             </div>
             <div className="mt-4 pb-4 grid grid-cols-2 gap-3">
               <BtnBuy></BtnBuy>
-              <BtnAddToCart food={food} qty={3}></BtnAddToCart>
+              <BtnAddToCart food={food} qty={food.quantity}></BtnAddToCart>
             </div>
           </div>
         </div>
