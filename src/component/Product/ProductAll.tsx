@@ -5,8 +5,8 @@ import Food from "../../utils/interface/Food";
 import { useState } from "react";
 
 const ProductAll = (): JSX.Element => {
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(0);
+  const [minPrice, setMinPrice] = useState(-1);
+  const [maxPrice, setMaxPrice] = useState(99999999999);
   const [inputMinPrice, setInputMinPrice] = useState("");
   const [inputMaxPrice, setInputMaxPrice] = useState("");
 
