@@ -32,7 +32,7 @@ const CartView = ({ cartItem }) => {
             <td>{formatCurrency(item.cart.price)}</td>
             <td>
               <form>
-                <input className="bg-gray-200" type="number" value={item.qty} name="cartQuantity" />
+                <input className="bg-white border rounded-lg p-0.5"  type="number - rounded-lg" value={item.qty} name="cartQuantity" />
                 <input type="submit" value="Cập nhật" name="submitBtn" />
                 <p>(Còn lại: 999)</p>
               </form>
