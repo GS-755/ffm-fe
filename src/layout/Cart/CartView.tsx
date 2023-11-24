@@ -32,7 +32,26 @@ const CartView = ({ cartItem }) => {
             <td>{formatCurrency(item.cart.price)}</td>
             <td>
               <form>
-                <input className="bg-gray-200" type="number" value={item.qty} name="cartQuantity" />
+              <div className="flex items-center">
+                  <button
+                    className="p-2 bg-gray-200 rounded"
+                    onClick={() => handleDecrease(item)}
+                  >
+                    -
+                  </button>
+                  <input
+                    className="bg-white border rounded p-1 text-center mx-2"
+                    type="number"
+                    value={item.qty}
+                    name="cartQuantity"
+                  />
+                  <button
+                    className="p-2 bg-gray-200 rounded"
+                    onClick={() => handleIncrease(item)}
+                  >
+                    +
+                  </button>
+                </div>
                 <input type="submit" value="Cập nhật" name="submitBtn" />
                 <p>(Còn lại: 999)</p>
               </form>
