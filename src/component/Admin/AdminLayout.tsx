@@ -104,7 +104,7 @@ export default function AdminLayout({children}: {children: ReactNode}) {
             </div>
             <div
               onClick={() => handleOptionClick("option3")}
-              className={`p-3 my-3 w-[100%] flex items-center  rounded-md cursor-pointer ${
+              className={`p-3 my-3 w-[100%] flex items-center rounded-md cursor-pointer ${
                 selectedOption === "option3"
                   ? "bg-orange-100  text-orange-500 hover:bg-orange-100"
                   : "text-slate-500 hover:bg-slate-200"
